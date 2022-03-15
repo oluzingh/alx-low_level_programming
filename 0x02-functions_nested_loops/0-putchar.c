@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "oluzingh"
 
 /**
  * main - function to print
@@ -7,12 +7,12 @@
  */
 int main(void)
 {
-	char holberton[9] = {'H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n'};
+	char oluzingh[8] = {'o', 'l', 'u', 'z', 'i', 'n', 'g', 'h'};
 	unsigned int c;
 
-	for (c = 0; c < sizeof(holberton); c++)
+	for (c = 0; c < sizeof(oluzingh); c++)
 {
-	_putchar(holberton[c]);
+	_putchar(oluzingh[c]);
 }
 	_putchar('\n');
 	return (0);
