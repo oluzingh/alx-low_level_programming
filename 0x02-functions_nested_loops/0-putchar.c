@@ -1,4 +1,4 @@
-#include "oluzingh"
+#include "oluzingh.h"
 
 /**
  * main - function to print
