@@ -5,22 +5,23 @@
  * @size: the int for the paramaters of my function
  * Return: 0
  */
-void print_square(int size)
+void print_diagonal(int n)
 {
 	int a = 0;
 	int b = 0;
 
-	if (size > 0)
+	if (n > 0)
 	{
-		while (a < size)
+		while (a < n)
 		{
-			while (b < size)
+			while (b < a)
 			{
-				_putchar('#');
+				_putchar(' ');
 				b++;
 			}
-			b = 0;
 			a++;
+			b = 0;
+			_putchar('\\');
 			_putchar('\n');
 		}
 	}
