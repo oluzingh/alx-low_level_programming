@@ -2,7 +2,7 @@
 
 /**
  * _puts - print a function that follow a new line.
- *@str:input string.
+ * @str:input string.
  * Return: 0 Always.
  */
 void _puts(char *str)
@@ -13,5 +13,5 @@ void _puts(char *str)
 	{
 		_putchar(str[c]);
 	}
-	_putchar('\n')
+	_putchar('\n');
 }
