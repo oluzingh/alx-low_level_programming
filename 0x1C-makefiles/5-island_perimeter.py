@@ -1,26 +1,34 @@
 #!/usr/bin/python3
-""" Module that contains the island_perimeter function """
+"""
+A function def island_perimeter(grid):
+that returns the perimeter of the island described in grid:
+"""
 
 
 def island_perimeter(grid):
-    """ Function that returns the perimeter of island described in grid """
-    perimeter = 0
+    """
+    grid is a list of list of integers:
+        0 represents a water zone
+        1 represents a land zone
+        One cell is a square with side length 1
+        Grid cells are connected horizontally/vertically (not diagonally).
+        Grid is rectangular, width and height don’t exceed 100
+    Grid is completely surrounded by water,
+    and there is one island (or nothing).
+    The island doesn’t have “lakes”
+    (water inside that isn’t connected to the water around the island).
+    """
+    width = len(grid[0])
+    height = len(grid)
+    edges = 0
+    size = 0
 
-    nrows = len(grid)
-
-    if grid != []:
-        ncolumns = len(grid[0])
-
-    for a in range(nrows):
-        for b in range(ncolumns):
-            if grid[a][b] == 1:
-                if (a - 1) == -1 or grid[a - 1][b] == 0:
-                    perimeter += 1
-                if (a + 1) == nrows or grid[a + 1][b] == 0:
-                    perimeter += 1
-                if (b - 1) == -1 or grid[a][b - 1] == 0:
-                    perimeter += 1
-                if (b + 1) == ncolumns or grid[a][b + 1] == 0:
-                    perimeter += 1
-
-    return 
+    for i in range(height):
+        for j in range(width):
+            if grid[i][j] == 1:
+                size += 1
+                if (j > 0 and grid[i][j - 1] == 1):
+                    edges += 1
+                if (i > 0 and grid[i - 1][j] == 1):
+                    edges += 1
+    return size * 4 - edges * 2 
